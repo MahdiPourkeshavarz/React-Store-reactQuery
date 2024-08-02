@@ -1,8 +1,15 @@
+import { useState } from "react";
 import { Cart } from "../../components/cart/cart";
 import { ProductsList } from "../../components/productsList/productsList";
 
 /* eslint-disable react/prop-types */
 export function Home({ number = 6 }) {
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (product) => {
+    setCartItems([...cartItems, product]);
+  };
+
   return (
     <>
       <div className="header w-full h-10 bg-blue-950 text-white text-left pl-4">
@@ -34,8 +41,8 @@ export function Home({ number = 6 }) {
       </div>
       <div className="line h-1 w-9/12 border-b border-black flex mx-auto"></div>
       <div className="flex p-8 justify-between">
-        <Cart />
-        <ProductsList />
+        <Cart cartItems={cartItems} />
+        <ProductsList addToCart={addToCart} />
       </div>
     </>
   );
