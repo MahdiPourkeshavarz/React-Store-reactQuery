@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { Cart } from "../../components/cart/cart";
 import { ProductsList } from "../../components/productsList/productsList";
+import { useGetProducts } from "../../hooks/useGetProducts";
+import { useGetSizes } from "../../hooks/useGetSizes";
 
 /* eslint-disable react/prop-types */
-export function Home({ number = 6 }) {
-  const [cartItems, setCartItems] = useState([]);
+export function Home() {
+  const [size, setSize] = useState("");
+  const [order, setOrder] = useState('lowest')
+  const { data: products, isLoading, error } = useGetProducts(size);
+  const { data: sizes } = useGetSizes();
 
-  const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
-  };
 
   return (
     <>
@@ -17,32 +19,36 @@ export function Home({ number = 6 }) {
       </div>
       <div className="control flex w-9/12 justify-between p-4 mx-auto">
         <div className="productsNumber">
-          <p>{number} Products</p>
+          <p> Products</p>
         </div>
         <div className="order flex items-center">
           <p>Order</p>
-          <select name="price" id="price">
+          <select name="price" id="price" onClick={(e)=> setOrder(e.target.value)}>
             <option value="lowest">Lowest</option>
             <option value="highest">Highest</option>
           </select>
         </div>
         <div className="filter flex items-center">
           <p>Filter</p>
-          <select name="filter" id="filter">
-            <option value="all">All</option>
-            <option value="all">Xs</option>
-            <option value="all">S</option>
-            <option value="all">M</option>
-            <option value="all">L</option>
-            <option value="all">Xl</option>
-            <option value="all">XXl</option>
+          <select
+            name="filter"
+            id="filter"
+            onClick={(e) => setSize(e.target.value)}
+          >
+            {sizes?.map((siz) => {
+              return (
+                <>
+                  <option value={siz.id}>{siz.name}</option>
+                </>
+              );
+            })}
           </select>
         </div>
       </div>
       <div className="line h-1 w-9/12 border-b border-black flex mx-auto"></div>
-      <div className="flex p-8 justify-between">
-        <Cart cartItems={cartItems} />
-        <ProductsList addToCart={addToCart} />
+      <div className="flex p-8 justify-between flex-row-reverse">
+        <Cart />
+        <ProductsList products={products} isLoading={isLoading} error={error} order={order}/>
       </div>
     </>
   );

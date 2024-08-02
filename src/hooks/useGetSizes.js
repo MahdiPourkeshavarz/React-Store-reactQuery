@@ -4,6 +4,6 @@ import { fetchSizes } from "../api/sizes.api";
 export function useGetSizes() {
   return useQuery({
     queryKey: ["sizes"],
-    queryFn: fetchSizes,
+    queryFn: () => fetchSizes(),
   });
 }

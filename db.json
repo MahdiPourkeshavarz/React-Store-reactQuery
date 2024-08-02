@@ -44,8 +44,8 @@
         "count": 500
       },
       "size": {
-        "id": "sm",
-        "name": "sm"
+        "id": "m",
+        "name": "m"
       }
     },
     {
@@ -60,8 +60,8 @@
         "count": 430
       },
       "size": {
-        "id": "sm",
-        "name": "sm"
+        "id": "m",
+        "name": "m"
       }
     },
     {
@@ -131,28 +131,82 @@
   ],
   "sizes": [
     {
-      "id": 1,
-      "name": "xs"
+      "id": "all",
+      "name": "All"
+    },
+    {
+      "id": "xs",
+      "name": "Xs"
+    },
+    {
+      "id": "s",
+      "name": "S"
+    },
+    {
+      "id": "m",
+      "name": "M"
+    },
+    {
+      "id": "l",
+      "name": "L"
+    },
+    {
+      "id": "xl",
+      "name": "Xl"
+    },
+    {
+      "id": "2xl",
+      "name": "XXL"
+    }
+  ],
+  "cart": [
+    {
+      "id": "3",
+      "title": "Mens Cotton Jacket",
+      "price": 55.99,
+      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+      "category": "sm",
+      "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 500
+      },
+      "size": {
+        "id": "m",
+        "name": "m"
+      }
     },
     {
       "id": 2,
-      "name": "s"
-    },
-    {
-      "id": 3,
-      "name": "m"
-    },
-    {
-      "id": 4,
-      "name": "l"
-    },
-    {
-      "id": 5,
-      "name": "xl"
+      "title": "Mens Casual Premium Slim Fit T-Shirts ",
+      "price": 22.3,
+      "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+      "category": "xl",
+      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "rating": {
+        "rate": 4.1,
+        "count": 259
+      },
+      "size": {
+        "id": "xl",
+        "name": "xl"
+      }
     },
     {
       "id": 6,
-      "name": "2xl"
+      "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+      "price": 9.85,
+      "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
+      "category": "2xl",
+      "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 130
+      },
+      "size": {
+        "id": "2xl",
+        "name": "2xl"
+      }
     }
   ]
 }
