@@ -1,3 +1,6 @@
+import { Cart } from "../../components/cart/cart";
+import { ProductsList } from "../../components/productsList/productsList";
+
 /* eslint-disable react/prop-types */
 export function Home({ number = 6 }) {
   return (
@@ -30,6 +33,10 @@ export function Home({ number = 6 }) {
         </div>
       </div>
       <div className="line h-1 w-9/12 border-b border-black flex mx-auto"></div>
+      <div className="flex p-8 justify-between">
+        <Cart />
+        <ProductsList />
+      </div>
     </>
   );
 }
